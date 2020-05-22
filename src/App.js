@@ -1,19 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import './App.scss';
 import {FSA} from './app-constants';
-
-const getTransitionDestinationState = (currentState, currentInput) => {
-  return FSA.TRANSITIONS.find(transition => (transition.from === currentState 
-      && transition.input === currentInput)).to;
-}
-
-const getFinalLabelForState = state => {
-  if (typeof (FSA.STATE_LABELS[state]) !== 'undefined') {
-    return FSA.STATE_LABELS[state];
-  }
-
-  return 'invalid input';
-}
+import {getTransitionDestinationState, getFinalLabelForState} from './utils';
 
 function App() {
   const [previousState, setPreviousState] = useState(undefined);
