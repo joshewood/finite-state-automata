@@ -21,17 +21,24 @@ const TRANSITIONS = [{
 }, {
   input: INPUTS[0],
   from: STATES[2],
-  to: STATES[0]
+  to: STATES[1]
 }, {
   input: INPUTS[1],
   from: STATES[2],
   to: STATES[2]
 }];
 
+const STATE_LABELS = {
+  S0: 0,
+  S1: 1,
+  S2: 2
+};
+
 export const FSA = {
   INITIAL_STATE,
   STATES,
   INPUTS,
   FINAL_STATES,
-  TRANSITIONS
+  TRANSITIONS,
+  STATE_LABELS
 };
