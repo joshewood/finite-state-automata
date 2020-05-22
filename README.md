@@ -2,9 +2,13 @@
 
 ## Prerequisites
 
-- [Node](https://nodejs.org/en/download/) `v12.9.0+`
-- [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) `1.22.4+`
-- [Git](https://git-scm.com/downloads)
+### - [Node](https://nodejs.org/en/download/) `v12.9.0+`
+### - [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable) `1.22.4+`
+### - [Git](https://git-scm.com/downloads)
+
+## Installing Dependencies
+
+### Run `yarn`
 
 ## Available Scripts
 
