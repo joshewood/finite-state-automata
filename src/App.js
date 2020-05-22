@@ -55,7 +55,7 @@ function App() {
           <h3>Final State</h3>
           <div className="DeterministicActivityIndicator"></div>
           <span className="Label">{getFinalLabelForState(currentState)}</span>
-          <button onClick={onConfirmFinalState} type="button">Confirm</button>
+          <button disabled={(isFinal) ? "disabled" : ""} onClick={onConfirmFinalState} type="button">Confirm</button>
         </div>
       </main>
     </div>
