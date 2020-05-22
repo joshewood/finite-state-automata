@@ -4,15 +4,20 @@ import {FSA} from './app-constants';
 import {getTransitionDestinationState, getFinalLabelForState} from './utils';
 
 function App() {
-  const [previousState, setPreviousState] = useState(undefined);
-  const [currentState, setCurrentState] = useState(FSA.STATES[FSA.INITIAL_STATE]);
-  const [previewNextState, setPreviewNextState] = useState(undefined);
+  const [previousState, setPreviousState] = useState('-');
+  const [currentState, setCurrentState] = useState(FSA.STATES[FSA.INITIAL_STATE_INDEX]);
+  const [previewNextState, setPreviewNextState] = useState('-');
   const [isIdle, setIsIdle] = useState(false);
   const [isFinal, setIsFinal] = useState(false);
 
   const onInputPreview = useCallback(ev => {
     const {value} = ev.target;
     setPreviewNextState(getTransitionDestinationState(currentState, value));
+  }, [previewNextState, currentState]);
+
+  const onInputPreviewLeave = useCallback(ev => {
+    const {value} = ev.target;
+    setPreviewNextState('-');
   }, [previewNextState, currentState]);
 
   const onInputAction = useCallback(ev => {
@@ -33,8 +38,8 @@ function App() {
       <main>
         <h2>Change State <small><em>by pressing a button</em></small></h2>
         <div className="InputContainer">
-          <button type="button" disabled={(isFinal) ? "disabled" : ""} value="0" onMouseEnter={onInputPreview} onClick={onInputAction}>0</button>
-          <button type="button" disabled={(isFinal) ? "disabled" : ""} value="1" onMouseEnter={onInputPreview} onClick={onInputAction}>1</button>
+          <button type="button" disabled={(isFinal) ? "disabled" : ""} value="0" onMouseEnter={onInputPreview} onMouseLeave={onInputPreviewLeave} onClick={onInputAction}>0</button>
+          <button type="button" disabled={(isFinal) ? "disabled" : ""} value="1" onMouseEnter={onInputPreview} onMouseLeave={onInputPreviewLeave} onClick={onInputAction}>1</button>
         </div>
         <div className="StateContainer">
           <span className="StateItem Previous">

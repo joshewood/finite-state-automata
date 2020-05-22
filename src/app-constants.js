@@ -1,5 +1,5 @@
 const STATES = ['S0', 'S1', 'S2'];
-const INITIAL_STATE = 0;
+const INITIAL_STATE_INDEX = 0;
 const INPUTS = ['0', '1'];
 const FINAL_STATES = [...STATES];
 const TRANSITIONS = [{
@@ -35,7 +35,7 @@ const STATE_LABELS = {
 };
 
 export const FSA = {
-  INITIAL_STATE,
+  INITIAL_STATE_INDEX,
   STATES,
   INPUTS,
   FINAL_STATES,
