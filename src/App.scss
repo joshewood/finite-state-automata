@@ -1,3 +1,63 @@
 .App {
   text-align: center;
+  main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+small {
+  font-size: 0.6em;
+}
+
+.InputContainer {
+  button {
+    margin: 0 1em;
+    font-size: 2em;
+    padding: 1em 2em;
+  }
+}
+
+.StateContainer {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 50vw;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    filter: blur(6px);
+    height: 94%;
+    left: 3%;
+    position: absolute;
+    width: 94%;
+    z-index: -1;
+  }
+
+  .StateItem {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em;
+    h3 {
+      display: inline-block;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 1.25px;
+    }
+
+    &.Current {
+      font-weight: 600;
+    }
+
+    &.Previous, &.Next {
+      color: gray;
+    }
+  }
 }
